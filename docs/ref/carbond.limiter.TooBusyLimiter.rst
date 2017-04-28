@@ -21,35 +21,29 @@ Properties
     :hidden:
 
     .. ifconfig:: carbonio_env != 'prod'
-        
-         .. attribute:: carbond.limiter.TooBusyLimiter.absMaxOutstandingReqs
 
-            .. csv-table::
-                :class: details-table
+        .. details-table:: carbond.limiter.TooBusyLimiter.absMaxOutstandingReqs
+            :type: Integer
+            :required:
 
-                "absMaxOutstandingReqs", :class:`Integer`
-                *Required*, ""
-                "Description", "The absolute maximum number of outstanding requests."
+            The absolute maximum number of outstanding requests.
 
 
-    .. attribute:: carbond.limiter.TooBusyLimiter.useFiberPoolSize
+    .. details-table:: carbond.limiter.TooBusyLimiter.useFiberPoolSize
+        :type: Boolean
+        :required:
 
-        .. csv-table::
-            :class: details-table
+        Use Fiber's pool size to set absMaxOutstandingReqs.
 
-            "useFiberPoolSize", :class:`Boolean`
-            *Required*, ""
-            "Description", "Use Fiber's pool size to set absMaxOutstandingReqs."
 
-    
-    .. attribute:: carbond.limiter.TooBusyLimiter.fiberPoolAllowedOverflow
+    .. details-table:: carbond.limiter.TooBusyLimiter.fiberPoolAllowedOverflow
+        :type: Number
+        :required:
 
-        .. csv-table::
-            :class: details-table
-
-            "fiberPoolAllowedOverflow", :class:`Number`
-            *Required*, ""
-            "Description", "Allow for more requests than ``Fiber.poolSize`` if limiting on ``Fiber.poolSize`` (i.e, ``absMaxOutstandingReqs == fiberPoolOverflow * Fiber.poolSize + Fiber.poolSize``). **Note**\, this only applies if :attr:`~carbond.limiter.TooBusyLimiter.useFiberPoolSize` is ``true``."
+        Allow for more requests than ``Fiber.poolSize`` if limiting on
+        ``Fiber.poolSize`` (i.e, ``absMaxOutstandingReqs == fiberPoolOverflow *
+        Fiber.poolSize + Fiber.poolSize``). **Note**\, this only applies if
+        :attr:`~carbond.limiter.TooBusyLimiter.useFiberPoolSize` is ``true``.
 
 
     .. attribute:: carbond.limiter.TooBusyLimiter.toobusyMaxLag
@@ -60,7 +54,7 @@ Properties
             "toobusyMaxLag", :class:`Integer`
             "Default", ``70``
             "Description", "The number of milliseconds Node's event loop must lag to trigger rate limiting of future requests."
-        
+
 
     .. attribute:: carbond.limiter.TooBusyLimiter.toobusyInterval
 
